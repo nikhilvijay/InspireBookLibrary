@@ -1,1 +1,7 @@
-<p>book-thumbnail works!</p>
+<div style="border: 1px solid red;margin: 5px;">
+{{book.PublishDate}}
+<img [src]="book.imageUrl" width="100px" height="100px"/>
+{{book.purchaseLink}}
+{{book.title}}
+<button (click)="editBook()">edit</button>
+</div>

@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
 import { ScreenModule } from './screen/screen.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,8 +13,8 @@ import { ScreenModule } from './screen/screen.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
-    ScreenModule
+    ScreenModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,25 @@
-<p>home works!</p>
+<app-header></app-header>
+
+<ng-container *ngIf="bookLibrary;else error">
+    <app-author-details [writter]="bookLibrary.data"></app-author-details>
+
+    <mat-slide-toggle (change)="toggleSort()" >
+        {{ sortByTitle ? 'Sort by Title' : 'Sort Chronologically' }}
+    </mat-slide-toggle>
+
+    <ng-container *ngFor="let book of bookLibrary.data.books; let bookIndex = index">
+        <app-book-thumbnail [book]="book" (edit)="openBookDialog(bookIndex)"></app-book-thumbnail>
+    </ng-container>
+
+    <div *ngIf="bookLibrary.data.books.length==0">
+        No data found
+    </div>
+
+    <button (click)="openBookDialog()">Add</button>
+</ng-container>
+
+<ng-template #error>
+    Something went wrong
+</ng-template>
+
+<app-footer></app-footer>
