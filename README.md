@@ -8,6 +8,8 @@ You can set up this project by running `npm install` on Windows. If you are usin
 
 Note that for macOS, you should run `sudo chmod -R 775 InspireBookLibrary`.
 
+In some cases, you may also need to add Angular Material (`ng add @angular/material`) and Bootstrap (`npm install bootstrap jquery popper.js`) manually to run or build the application. In most cases, this is not required. This should be done only if you face issues in running or building the application.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
