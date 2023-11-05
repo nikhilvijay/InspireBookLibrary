@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Setup Project
 
-You can set up this project by running npm install on Windows. If you are using macOS, use sudo npm install.
+You can set up this project by running `npm install` on Windows. If you are using macOS, use `sudo npm install`.
 
-Note that for macOS, you should run sudo chmod -R 775 InspireBookLibrary.
+Note that for macOS, you should run `sudo chmod -R 775 InspireBookLibrary`.
 
 ## Development server
 
