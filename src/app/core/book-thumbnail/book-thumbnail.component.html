@@ -1,7 +1,13 @@
-<div style="border: 1px solid red;margin: 5px;">
-{{book.PublishDate}}
-<img [src]="book.imageUrl" width="100px" height="100px"/>
-{{book.purchaseLink}}
-{{book.title}}
-<button (click)="editBook()">edit</button>
+<!-- Book Thumbnail Component -->
+<div class="book-thumbnail col-xl-6 col-sm-12">
+    <a class="book-purchase-link" [href]="book.purchaseLink" target="_blank">
+        <img class="book-preview" [src]="book.imageUrl"/>
+        <h3  class="book-title-text">{{book.title}}</h3>
+        <h4 class="book-details-text">
+            <span class="book-info-text">{{book.PublishDate}}</span> | <span class="book-info-text">{{book.purchaseLink}}</span>
+        </h4>
+    </a>
+    <button type="button" class="book-edit-button btn btn-danger" (click)="editBook()">
+        <i class="bi bi-pencil-square"></i> Edit
+    </button>
 </div>

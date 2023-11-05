@@ -1,0 +1,41 @@
+.book-author {
+    padding: 20px;
+
+    /* The container for the author information */
+    .book-author-container {
+        background-color: #c6c6c6;
+        color: #000;
+        border-radius: 5px;
+        display: flex; /* Use Flexbox to create a row layout */
+        align-items: center; /* Vertically center the content */
+        padding: 10px;
+    }
+
+    /* Styling for the author's avatar */
+    .book-author-avatar {
+        font-size: 65px;
+    }
+
+    /* Styling for the author's details */
+    .book-author-details {
+        padding-left: 10px;
+        flex-grow: 1; /* Allow this part to grow and take available space */
+    }
+
+    /* Common styling for author name and info */
+    .book-author-name, .book-author-info {
+        margin: 0;
+    }
+
+    /* Styling for the author's name */
+    .book-author-name {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* Styling for additional author information */
+    .book-author-info {
+        word-wrap: break-word;
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,26 @@
+/* Styles for the header section */
+.book-header {
+    background: #fb5575; /* Background color for the header */
+    padding: 0 10%; /* Padding on the left and right of the header */
+
+    .book-header-text, .book-header-tagline {
+        color: #fff; /* Text color for both h1 and h4 elements */
+        text-align: center; /* Center-align the text within the header */
+    }
+
+    .book-header-text {
+        font-weight: 700; /* Set font weight for h1 element */
+        line-height: 1; /* Set line height for h1 element */
+        text-transform: uppercase; /* Transform text to uppercase */
+        padding-top: 50px; /* Top padding for h1 element */
+        font-size: 44px; /* Font size for h1 element */
+        font-family: centurygothicregular; /* Font family for h1 element */
+    }
+
+    .book-header-tagline {
+        line-height: 1.5em; /* Set line height for h4 element */
+        padding-bottom: 25px; /* Bottom padding for h4 element */
+        box-sizing: border-box; /* Use border-box sizing for h4 element */
+        font-family: helvetica; /* Font family for h4 element */
+    }
+}

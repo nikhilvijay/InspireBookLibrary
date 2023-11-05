@@ -5,10 +5,7 @@ import { CoreModule } from '../core/core.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
@@ -16,14 +13,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    CoreModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    MatSlideToggleModule,
-    MatDialogModule
+    CoreModule, // Import the CoreModule which contains shared components and services
+    ReactiveFormsModule, // Import ReactiveFormsModule for working with forms
+    MatIconModule, // Import MatIconModule for using material icons
+    MatSlideToggleModule, // Import MatSlideToggleModule for slide toggle component
+    MatDialogModule // Import MatDialogModule for dialogs
   ],
-  exports:[
-    HomeComponent
+  exports: [
+    HomeComponent // Export HomeComponent for use in other modules
   ]
 })
 export class ScreenModule { }

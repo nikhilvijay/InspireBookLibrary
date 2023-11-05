@@ -1,0 +1,46 @@
+/* Styling for the Book Thumbnail Component */
+.book-thumbnail {
+    overflow: hidden;
+    display: inline-block;
+    padding: 20px;
+    vertical-align: top;
+
+    .book-preview {
+      width: 100%;
+      border-radius: 5px; /* Rounded corners for images */
+    }
+
+    .book-purchase-link, .book-title-text, .book-details-text {
+      text-decoration: none; /* Remove underlines from links and set common styles for headings */
+      color: #000; /* Text color in black */
+      cursor: pointer; /* Change cursor to a pointer on hover */
+      padding: 0;
+      margin: 0;
+      font-family: "Roboto", "Arial", sans-serif; /* Define font family */
+    }
+
+    .book-title-text {
+      font-size: 16px; /* Set font size for h3 */
+      font-weight: 500; /* Set font weight for h3 */
+    }
+
+    .book-info-text {
+      font-size: 13px; /* Set font size for span elements */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; /* Handle long text with ellipsis */
+      display: inline-block;
+      vertical-align: middle;
+      color: rgb(96, 96, 96); /* Text color in a shade of gray */
+
+      &:not(:first-child) {
+        width: 150px; /* Set a fixed width for spans that are not the first child */
+      }
+    }
+
+    .book-edit-button {
+      padding: 2px;
+      height: 22px;
+      font-size: 11.5px; /* Set padding, height, and font size for buttons */
+    }
+}

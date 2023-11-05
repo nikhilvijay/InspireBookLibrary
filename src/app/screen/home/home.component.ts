@@ -24,6 +24,7 @@ export class HomeComponent {
       this.dataService.log("api response", bookLibrary);
       if (bookLibrary.status == Status.success) {
         this.bookLibrary = bookLibrary;
+        this.toggleSort();
       }
     });
   }

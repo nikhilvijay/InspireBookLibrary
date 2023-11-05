@@ -1,0 +1,15 @@
+/* Styling for the book footer section */
+.book-footer {
+    background-color: #ffc107; /* Set the background color for the book footer */
+    height: 100px; /* Set the height of the footer */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+
+    /* Styles for the book copyright text */
+    .book-copyright {
+        text-align: center; /* Center-align the text within the book-copyright element */
+        font-size: 15px; /* Set the font size for the copyright text */
+        color: #000; /* Set the text color to black */
+    }
+}

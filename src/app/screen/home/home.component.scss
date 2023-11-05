@@ -1,0 +1,43 @@
+/* Define styles for the .book-content container */
+.book-content {
+    min-height: 75vh;
+    display: block;
+
+    /* Styles for the .books-title within .book-content */
+    .books-title {
+        padding: 0 20px;
+        margin: 0; 
+    
+        /* Styles for the .books-heading within .book-title */
+        .book-heading{
+            display: inline-block;
+        }
+
+        /* Styles for the .books-toggle within .book-title */
+        .books-control {
+            float: right;
+
+            .book-toggle{
+                padding-right: 10px;
+                border-right: 1px solid #d6d6d6
+            }
+
+            .book-add-button{
+                margin-left: 10px;
+            }
+        }
+    }
+
+    /* Styles for the .book-error within .book-content */
+    .book-error {
+        background-color: #c6c6c6;
+        color: #000;
+        -webkit-border-radius: 5px; /* Added Webkit vendor prefix for older Webkit-based browsers */
+        border-radius: 5px;
+        display: block;
+        padding: 30px 10px;
+        margin: 20px;
+        text-align: center;
+        font-size: 15px;
+    }
+}

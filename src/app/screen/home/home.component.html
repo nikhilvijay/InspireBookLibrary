@@ -1,25 +1,56 @@
+<!-- Header component -->
 <app-header></app-header>
 
-<ng-container *ngIf="bookLibrary;else error">
-    <app-author-details [writter]="bookLibrary.data"></app-author-details>
+<!-- Main content container with a class of "book-content" -->
+<content class="book-content">
+    <!-- Angular structural directive: Display author details if "bookLibrary" is truthy, otherwise display an error message -->
+    <ng-container *ngIf="bookLibrary; else error">
+        <!-- Author details component -->
+        <app-author-details [writter]="bookLibrary.data"></app-author-details>
 
-    <mat-slide-toggle (change)="toggleSort()" >
-        {{ sortByTitle ? 'Sort by Title' : 'Sort Chronologically' }}
-    </mat-slide-toggle>
+        <!-- Container for the books section with a class of "books-title" -->
+        <div class="books-title">
+            <!-- Heading for the books section -->
+            <h2 class="book-heading">
+                <i class="bi bi-book-half"></i> <!-- Book icon -->
+                Books
+            </h2>
 
-    <ng-container *ngFor="let book of bookLibrary.data.books; let bookIndex = index">
-        <app-book-thumbnail [book]="book" (edit)="openBookDialog(bookIndex)"></app-book-thumbnail>
+            <!-- Container for control elements related to books -->
+            <div class="books-control">
+                <!-- Toggle button for sorting books -->
+                <mat-slide-toggle class="book-toggle" (change)="toggleSort()">
+                    <!-- Display different text based on the value of "sortByTitle" -->
+                    {{ sortByTitle ? 'Sort by Title' : 'Sort Chronologically' }}
+                </mat-slide-toggle>
+
+                <!-- Button to add a new book -->
+                <button type="button" class="book-add-button btn btn-secondary btn-sm" (click)="openBookDialog()">
+                    <i class="bi bi-plus-circle-dotted"></i>
+                    Add
+                </button>
+            </div>
+        </div>
+
+        <!-- Angular structural directive: Loop through each book in the "bookLibrary.data.books" array -->
+        <ng-container *ngFor="let book of bookLibrary.data.books; let bookIndex = index">
+            <!-- Book thumbnail component for each book -->
+            <app-book-thumbnail [book]="book" (edit)="openBookDialog(bookIndex)"></app-book-thumbnail>
+        </ng-container>
+
+        <!-- Display an error message if there are no books in the data -->
+        <div *ngIf="bookLibrary.data.books.length == 0" class="book-error">
+            No data found
+        </div>
     </ng-container>
 
-    <div *ngIf="bookLibrary.data.books.length==0">
-        No data found
-    </div>
+    <!-- Angular template reference variable: Display an error message if "bookLibrary" is falsy -->
+    <ng-template #error>
+        <div class="book-error">
+            Something went wrong
+        </div>
+    </ng-template>
+</content>
 
-    <button (click)="openBookDialog()">Add</button>
-</ng-container>
-
-<ng-template #error>
-    Something went wrong
-</ng-template>
-
+<!-- Footer component -->
 <app-footer></app-footer>
