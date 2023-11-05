@@ -20,7 +20,7 @@ export class DataService {
 
   // Conditional logging function that logs the provided 'tag' and 'value'
   // only if the application is not in production mode.
-  log(tag: string, value: any) {
+  log(tag: string, value: string|object) {
     if (!environment.production) {
       console.log(tag, value);
     }

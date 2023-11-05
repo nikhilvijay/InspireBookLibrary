@@ -8,7 +8,7 @@ import { Book } from '../book.interface';
 })
 export class BookThumbnailComponent {
   @Input() book!: Book; // Input property to receive book data
-  @Output() edit = new EventEmitter<any>(); // Output event to trigger book edit
+  @Output() edit = new EventEmitter<void>(); // Output event to trigger book edit
 
   noAction:boolean = false; // Identify mouse hover on edit button
 

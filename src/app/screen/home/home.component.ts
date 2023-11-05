@@ -3,9 +3,12 @@ import { BookLibrary } from 'src/app/core/book-library.interface';
 import { DataService } from 'src/app/data.service';
 import { Status } from '../../core/book-library.const';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BookDialogComponent } from 'src/app/core/book-dialog/book-dialog.component';
 import { Book } from 'src/app/core/book.interface';
 import { UserAction } from 'src/app/core/user-action.enum';
+import { BookData } from 'src/app/core/book-data.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +19,8 @@ export class HomeComponent {
 
   bookLibrary!: BookLibrary;
 
-  constructor(private dataService: DataService, private dialog: MatDialog) { }
+  constructor(
+    private dataService: DataService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     // Fetch data from the API and populate the bookLibrary
@@ -58,29 +62,39 @@ export class HomeComponent {
     }
 
     const dialogRef = this.dialog.open(BookDialogComponent, {
-      width: '400px', // Set the dialog width as needed
+      width: '500px', // Set the dialog width as needed
       data: { book: book, bookIndex: bookIndex },
     });
 
-    dialogRef.afterClosed().subscribe((bookData: any) => {
+    dialogRef.afterClosed().subscribe((bookData: BookData) => {
       if (bookData) {
         // Handle the form data received from the child component
         this.dataService.log("form response", bookData);
         switch (bookData.userAction) {
           case UserAction.Save:
             this.bookLibrary.data.books.push(bookData.book);
+            this.displayToast("Book saved successfully");
             break;
 
           case UserAction.Update:
             this.bookLibrary.data.books[bookData.bookIndex] = bookData.book;
+            this.displayToast("Book updated successfully");
             break;
 
           case UserAction.Delete:
             this.bookLibrary.data.books.splice(bookData.bookIndex, 1);
+            this.displayToast("Book deleted successfully");
             break;
         }
         this.sortBook();
       }
+    });
+  }
+
+  // Show message to user
+  displayToast(message:string){
+    this.snackBar.open(message, environment.toastButtonText, {
+      duration: environment.toastTime
     });
   }
 }

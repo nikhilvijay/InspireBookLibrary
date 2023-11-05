@@ -10,6 +10,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     AuthorDetailsComponent,
-    BookDialogComponent
+    BookDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -26,12 +30,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSlideToggleModule, // Import MatSlideToggleModule for slide toggle component
     MatDialogModule, // Import MatDialogModule for dialogs
     BrowserAnimationsModule, // Import BrowserAnimationsModule for animations (required by some material components)
+    MatCardModule, // Import MatCardModule for toast
+    MatButtonModule, // Import MatCardModule for toast
+    MatSnackBarModule, // Import MatCardModule for toast
   ],
   exports: [
     BookThumbnailComponent,
     HeaderComponent,
     FooterComponent,
-    AuthorDetailsComponent
+    AuthorDetailsComponent,
   ]
 })
 export class CoreModule { }

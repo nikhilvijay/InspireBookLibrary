@@ -1,0 +1,43 @@
+/* This is a CSS class for the container of a book dialog */
+.book-dialog-container {
+
+    /* Header styles for the book dialog */
+    .book-dialog-header {
+        line-height: 1;
+        text-transform: uppercase;
+        font-size: 23px;
+        font-family: centurygothicregular;
+        background: #fb5575;
+        padding: 10px 10px;
+        color: #fff;
+        text-align: left;
+    }
+
+    /* Form styles for the book dialog */
+    .book-dialog-form {
+        padding: 20px;
+
+        /* Group of elements within the form */
+        .book-dialog-group {
+            margin-bottom: 15px;
+        }
+
+        /* Styling for error messages in the form */
+        .form-dialog-error {
+            color: red;
+        }
+    }
+
+    /* Button styles for the book dialog */
+    .book-dialog-button {
+        border-radius: 0;
+        background-color: #fb5575;
+        color: #fff;
+
+        /* Hover effect for the button */
+        &:hover {
+            opacity: .7;
+            cursor: pointer;
+        }
+    }
+}
