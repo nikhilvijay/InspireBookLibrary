@@ -9,6 +9,7 @@ import { Book } from 'src/app/core/book.interface';
 import { UserAction } from 'src/app/core/user-action.enum';
 import { BookData } from 'src/app/core/book-data.interface';
 import { environment } from 'src/environments/environment';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -18,13 +19,20 @@ import { environment } from 'src/environments/environment';
 export class HomeComponent {
 
   bookLibrary!: BookLibrary;
+  loaded:boolean = false;
 
   constructor(
     private dataService: DataService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     // Fetch data from the API and populate the bookLibrary
-    this.dataService.fetchData().subscribe((bookLibrary: BookLibrary) => {
+    this.dataService.fetchData().pipe(
+      catchError(() => {
+        this.loaded = true;
+        return throwError('An error occurred. Please try again later.');
+      })
+    ).subscribe((bookLibrary: BookLibrary) => {
+      this.loaded = true;
       this.dataService.log("api response", bookLibrary);
       if (bookLibrary.status == Status.success) {
         this.bookLibrary = bookLibrary;

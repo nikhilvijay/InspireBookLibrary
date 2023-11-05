@@ -46,7 +46,7 @@
 
     <!-- Angular template reference variable: Display an error message if "bookLibrary" is falsy -->
     <ng-template #error>
-        <div class="book-error">
+        <div *ngIf="loaded" class="book-error">
             Something went wrong
         </div>
     </ng-template>
@@ -54,3 +54,8 @@
 
 <!-- Footer component -->
 <app-footer></app-footer>
+
+<!--Loading Graphics-->
+<div class="book-loading-overlay" *ngIf="!loaded">
+    <mat-spinner></mat-spinner>
+</div>

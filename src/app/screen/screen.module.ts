@@ -5,6 +5,7 @@ import { CoreModule } from '../core/core.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule, // Import ReactiveFormsModule for working with forms
     MatIconModule, // Import MatIconModule for using material icons
     MatSlideToggleModule, // Import MatSlideToggleModule for slide toggle component
-    MatDialogModule // Import MatDialogModule for dialogs
+    MatDialogModule, // Import MatDialogModule for dialogs
+    MatProgressSpinnerModule
   ],
   exports: [
     HomeComponent // Export HomeComponent for use in other modules
